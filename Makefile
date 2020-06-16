@@ -26,6 +26,7 @@ define Package/luci-app-smartdns/description
 endef
 
 define Build/Prepare
+	po2lmo ${CURDIR}/po/zh-cn/smartdns.po ${CURDIR}/po/zh-cn/smartdns.zh-cn.lmo
 endef
 
 define Build/Configure
@@ -44,7 +45,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd	
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
 
-	$(INSTALL_DATA) ./po/zh-cn/clash.zh-cn.lmo $(1)/usr/lib/lua/luci/i18n/
+	$(INSTALL_DATA) ./po/zh-cn/smartdns.zh-cn.lmo $(1)/usr/lib/lua/luci/i18n/
 	$(INSTALL_BIN) ./root/usr/share/rpcd/acl.d/luci-app-smartdns.json $(1)/usr/share/rpcd/acl.d/
 	$(INSTALL_BIN) ./root/usr/share/luci/menu.d/luci-app-smartdns.json $(1)/usr/share/luci/menu.d/
 	$(INSTALL_BIN) ./htdocs/luci-static/resources/view/smartdns/smartdns.js $(1)/www/luci-static/resources/view/smartdns/
