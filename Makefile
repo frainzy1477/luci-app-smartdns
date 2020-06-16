@@ -21,7 +21,7 @@ define Package/luci-app-smartdns
   URL:=https://github.com/frainzy1477/smartdns/
 endef
 
-define Package/$(PKG_NAME)/description
+define Package/luci-app-smartdns/description
 	Luci Interface for smartdns.
 endef
 
